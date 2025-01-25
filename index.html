@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AvioniX - Aerospace Innovation Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #4fc3f7, #1a237e);
+            background-size: 200% 200%;
+            animation: gradient 5s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-slate-900/95 backdrop-blur-sm border-b border-slate-700/50 z-50 transition-all duration-300 hover:bg-slate-900/100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo/Brand -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <svg class="w-8 h-8 text-cyan-400 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                    </svg>
+                    <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                        AvioniX
+                    </span>
+                </a>
+    
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link relative px-3 py-2 hover:text-cyan-400">
+                        <span>Home</span>
+                        <div class="nav-underline"></div>
+                    </a>
+                    <a href="#about" class="nav-link relative px-3 py-2 hover:text-cyan-400">
+                        <span>About</span>
+                        <div class="nav-underline"></div>
+                    </a>
+                    <a href="#team" class="nav-link relative px-3 py-2 hover:text-cyan-400">
+                        <span>Team</span>
+                        <div class="nav-underline"></div>
+                    </a>
+                    <a href="#projects" class="nav-link relative px-3 py-2 hover:text-cyan-400">
+                        <span>Projects</span>
+                        <div class="nav-underline"></div>
+                    </a>
+                    <a href="#contact" class="px-4 py-2 bg-cyan-500 text-slate-900 rounded-lg font-medium hover:bg-cyan-400 transition-colors">
+                        Contact
+                    </a>
+                </div>
+    
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-slate-800/50 transition-colors">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    
+        <style>
+            .nav-link:hover .nav-underline {
+                width: 100%;
+                opacity: 1;
+            }
+    
+            .nav-underline {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                width: 0;
+                background: linear-gradient(90deg, #22d3ee 0%, #3b82f6 100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+    
+            .nav-link.active .nav-underline {
+                width: 100%;
+                opacity: 1;
+            }
+        </style>
+    </nav>
+
+    <!-- Hero Section -->
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1457364887197-9150188c107b')] bg-cover bg-center opacity-30 animate-parallax"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-slate-900/30"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles absolute inset-0 z-1">
+        <div class="particle absolute w-1 h-1 bg-cyan-400 rounded-full animate-float"></div>
+        <!-- Add more particles with different positions/delays -->
+    </div>
+
+    <!-- Content -->
+    <div class="container mx-auto text-center relative z-10 px-4">
+        <!-- Animated Logo Text -->
+        <div class="mb-16 animate-fade-in-down">
+            <h1 class="text-6xl md:text-9xl font-black mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-gradient-x">
+                AvioniX
+            </h1>
+            <p class="text-xl md:text-3xl font-medium text-gray-300 mb-8 animate-text-rotate">
+                <span>Where Algorithms Meet Aerodynamics</span>
+                <span class="hidden">Pioneering Aerospace AI Solutions</span>
+                <span class="hidden">Next-Gen Flight Technology</span>
+            </p>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6 animate-fade-in-up">
+            <a href="#contact" 
+               class="cta-pulse inline-flex items-center bg-cyan-500 hover:bg-cyan-600 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg md:text-xl transition-all transform hover:scale-105">
+                <i class="fas fa-rocket mr-3"></i>
+                Join Our Mission
+            </a>
+            <a href="#projects" 
+               class="inline-flex items-center border-2 border-cyan-400/30 hover:border-cyan-400/60 text-cyan-300 px-8 py-4 rounded-xl font-semibold text-lg md:text-xl transition-all">
+                <i class="fas fa-microchip mr-3"></i>
+                Explore Innovations
+            </a>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="mt-7 animate-fade-in">
+            <div class="flex flex-wrap items-center justify-center gap-8 opacity-80 hover:opacity-100 transition-opacity">
+                <!-- <div class="flex items-center gap-3">
+                    <i class="fas fa-trophy text-cyan-400 text-2xl"></i>
+                    <span class="text-gray-300">5x National Champions</span>
+                </div> -->
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-users text-cyan-400 text-2xl"></i>
+                    <span class="text-gray-300">15+ Technical Members</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-flask text-cyan-400 text-2xl"></i>
+                    <span class="text-gray-300">2 Ongoing Projects</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        
+    </div>
+
+    <style>
+        @keyframes gradient-x {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .animate-gradient-x {
+            background-size: 200% 200%;
+            animation: gradient-x 8s ease infinite;
+        }
+
+        .animate-parallax {
+            animation: parallax 20s linear infinite;
+        }
+
+        @keyframes parallax {
+            0% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.1) translateY(-20px); }
+            100% { transform: scale(1) translateY(0); }
+        }
+
+        .cta-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 211, 238, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+        }
+
+        .animate-text-rotate span {
+            animation: text-rotate 5s infinite;
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        @keyframes text-rotate {
+            0% { opacity: 0; transform: translateY(20px); }
+            5% { opacity: 1; transform: translateY(0); }
+            25% { opacity: 1; transform: translateY(0); }
+            30% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 0; }
+        }
+    </style>
+</section>
+
+   <!-- About Section -->
+<section id="about" class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-8">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                    About AvioniX
+                </span>
+            </h2>
+            
+            <div class="grid md:grid-cols-5 gap-8 items-center">
+                <!-- Icon Grid -->
+                <div class="md:col-span-2 flex flex-col space-y-6">
+                    <div class="p-6 bg-slate-700 rounded-xl hover:bg-slate-600 transition-colors">
+                        <i class="fas fa-rocket text-4xl text-cyan-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Rocketry Excellence</h3>
+                        <p class="text-gray-300">Competing in international rocketry challenges</p>
+                    </div>
+                    <div class="p-6 bg-slate-700 rounded-xl hover:bg-slate-600 transition-colors">
+                        <i class="fas fa-brain text-4xl text-cyan-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">AI Innovation</h3>
+                        <p class="text-gray-300">Pioneering aerospace AI solutions</p>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="md:col-span-3">
+                    <p class="text-lg leading-relaxed mb-6">
+                        Born from the <span class="text-cyan-400 font-semibold">Institute of Aeronautics and Space Studies</span> 
+                        at the University of Blida 1, AvioniX represents Algeria's brightest minds in aerospace innovation. 
+                        We're a multidisciplinary team engineering tomorrow's solutions through:
+                    </p>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-cyan-400 mr-3"></i>
+                            International technical competitions & hackathons
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-cyan-400 mr-3"></i>
+                            Cutting-edge research in propulsion systems & AI
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-cyan-400 mr-3"></i>
+                            Student-led aerospace technology development
+                        </li>
+                    </ul>
+
+                    <div class="border-l-4 border-cyan-400 pl-4">
+                        <p class="text-xl italic font-light">
+                            "Where academic excellence meets aerospace innovation"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Team Section -->
+<section id="team" class="py-20 bg-slate-800">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                    Leadership Team
+                </span>
+            </h2>
+            <p class="text-xl text-gray-300">The brilliant minds driving avionics innovation</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Team Member Card -->
+            <div class="group bg-slate-700 p-6 rounded-xl transition-all hover:bg-slate-600/50 hover:shadow-xl hover:-translate-y-2">
+                <div class="relative w-48 h-48 mx-auto mb-6">
+                    <img src="./img/photo_2025-01-12_16-43-26(2).jpg" 
+                         alt="Mohammed Chikh BEN MAZOUZIA"
+                         class="w-full h-full object-cover rounded-full border-4 border-cyan-400/20 group-hover:border-cyan-400/40">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent rounded-full"></div>
+                </div>
+                
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-2">Mohammed Chikh BEN MAZOUZIA</h3>
+                    <p class="text-cyan-400 mb-4">Team Leader</p>
+                    
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-4 border-t border-slate-600 pt-4">
+                        <p class="text-sm text-gray-300">
+                            Specializes in avionics systems and embeded systems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more team members following this structure -->
+            <!-- <div class="group bg-slate-700 p-6 rounded-xl transition-all hover:bg-slate-600/50 hover:shadow-xl hover:-translate-y-2">
+                <div class="relative w-48 h-48 mx-auto mb-6">
+                    <img src="placeholder-member.jpg" 
+                         alt=""
+                         class="w-full h-full object-cover rounded-full border-4 border-cyan-400/20 group-hover:border-cyan-400/40">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent rounded-full"></div>
+                </div>
+                
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-2">Team Member Name</h3>
+                    <p class="text-cyan-400 mb-4">Position/Role</p>
+                    
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-4 border-t border-slate-600 pt-4">
+                        <p class="text-sm text-gray-300">
+                            Expertise area or short description
+                        </p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+   <!-- Projects Section -->
+<section id="projects" class="py-20 bg-slate-900">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                Our Innovations
+            </span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Fennec 1 -->
+            <div class="group bg-slate-800 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-400/40 transition-all">
+                <div class="mb-4 flex items-center justify-between">
+                    <h3 class="text-2xl font-bold">Fennec-1</h3>
+                    <i class="fas fa-microchip text-cyan-400 text-3xl"></i>
+                </div>
+                <p class="text-gray-300 mb-4">
+                    Advanced flight computer system with real-time telemetry processing and AI-powered decision making. 
+                    Features redundant systems architecture.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Embedded Systems</span>
+                    <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Sensor Fusion</span>
+                </div>
+            </div>
+
+            <!-- FennecEye -->
+            <div class="group bg-slate-800 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-400/40 transition-all flex flex-col justify-between">
+                <div class="mb-4 flex items-center justify-between">
+                    <h3 class="text-2xl font-bold">FennecEye</h3>
+                    <i class="fas fa-rocket text-cyan-400 text-3xl"></i>
+                </div>
+                <p class="text-gray-300 mb-4">
+                    Real-time rocket health monitoring system with predictive failure analysis. 
+                    
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Telemetry Analytics</span>
+                    <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Data Analytics</span>
+                </div>
+            </div>
+
+            <!-- Ultra Mapping Robot -->
+            <div class="group bg-slate-800 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-400/40 transition-all">
+                <div class="mb-4 flex items-center justify-between">
+                    <h3 class="text-2xl font-bold">Ultra Rover</h3>
+                    <i class="fas fa-robot text-cyan-400 text-3xl"></i>
+                </div>
+                <p class="text-gray-300 mb-4">
+                    Autonomous terrain mapping robot with LiDAR SLAM navigation and multispectral imaging. 
+                    Designed for planetary analogue mission simulations.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Autonomous Navigation</span>
+                    <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Mapping</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Competitions Section -->
+<section id="competitions" class="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                2024-2025 Competition Roadmap
+            </span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <!-- Competition Cards -->
+            <div class="bg-slate-800 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-400/40 transition-all hover:-translate-y-2">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold">4th National University Competition for Scientific Clubs</h3>
+                        <div class="flex items-center mt-2 text-cyan-400">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span>February 19-21, 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300">Competing in AI-driven challenges</p>
+                <div class="mt-4 flex flex-row justify-between items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-cyan-400 mr-2"></i>
+                        <span>Biskra, Algeria</span>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-sm">In Preparation</span>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-400/40 transition-all hover:-translate-y-2">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold">2nd National Competition for Programming & Robotics</h3>
+                        <div class="flex items-center mt-2 text-cyan-400">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span>April 12-16, 2025</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <p class="text-gray-300">Competing in AI-driven robotics challenges and embedded systems programming</p>
+                <div class="mt-4 flex flex-row justify-between items-center  ">
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-cyan-400 mr-2"></i>
+                        <span>Tabsa, Algeria</span>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-sm">In-Preparation</span>
+                </div>
+                
+            </div>
+
+            <div class="bg-slate-800 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-400/40 transition-all hover:-translate-y-2">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold">6th National Rocketry Competition</h3>
+                        <div class="flex items-center mt-2 text-cyan-400">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span>December 2025</span>
+                        </div>
+                    </div>
+                   
+                </div>
+                <p class="text-gray-300">Demonstrating Fennec 2 flight computer and advanced recovery systems</p>
+                <div class="mt-4 flex flex-row justify-between items-center  ">
+                <div class="mt-4 flex items-center">
+                    <i class="fas fa-map-marker-alt text-cyan-400 mr-2"></i>
+                    <span>Blida, Algeria</span>
+                </div>
+                <span class="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-sm">In-Preparation</span>
+            </div>
+            </div>
+
+            
+        </div>
+
+        <!-- Legend -->
+        <div class="mt-12 flex flex-wrap justify-center gap-4 text-sm">
+            <div class="flex items-center">
+                <div class="w-3 h-3 bg-green-500/20 rounded-full mr-2"></div>
+                <span class="text-gray-300">Confirmed Participation</span>
+            </div>
+            <div class="flex items-center">
+                <div class="w-3 h-3 bg-blue-500/20 rounded-full mr-2"></div>
+                <span class="text-gray-300">In Preparation</span>
+            </div>
+            <div class="flex items-center">
+                <div class="w-3 h-3 bg-amber-500/20 rounded-full mr-2"></div>
+                <span class="text-gray-300">Pending Approval</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Next Competition Section -->
+<section id="competition" class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                Next Major Challenge
+            </span>
+        </h2>
+
+        <div class="max-w-6xl mx-auto">
+            <!-- Competition Header -->
+            <div class="bg-slate-800 rounded-xl p-8 mb-12 border border-cyan-500/20 hover:border-cyan-400/40 transition-all">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-3xl font-bold mb-2">6th National Rocketry Competition</h3>
+                        <div class="flex items-center justify-center md:justify-start space-x-4 text-cyan-400">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>December 02-03, 2025</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="text-center p-4 bg-slate-700 rounded-lg">
+                            <div class="text-2xl font-bold text-cyan-400">311</div>
+                            <div class="text-sm text-gray-300">Days Left</div>
+                        </div>
+                        <div class="h-16 w-1 bg-slate-600"></div>
+                        <div class="text-center p-4 bg-slate-700 rounded-lg">
+                            <div class="text-2xl font-bold text-cyan-400">3</div>
+                            <div class="text-sm text-gray-300">Active Projects</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Tasks Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-slate-800 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-400/40 transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-microchip text-cyan-400 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold">Fennec 2 Flight Computer</h4>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Next-generation avionics system featuring dual redundant processors, 9-axis IMU integration, 
+                        and adaptive thermal management. Designed for high-G environments with 500Hz sensor sampling 
+                        rate and real-time decision-making capabilities.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Redundant Systems</span>
+                        <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Sensor Fusion</span>
+                        <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">FPGA Integration</span>
+                    </div>
+                    <div class="mt-4">
+                        <div class="h-2 bg-slate-700 rounded-full">
+                            <div class="h-2 bg-cyan-400 rounded-full w-1/12"></div>
+                        </div>
+                        <span class="text-sm text-cyan-400">Prototype Phase - 5% Complete</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-400/40 transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-shield-alt text-cyan-400 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold">Dual-Redundant Flight Computer</h4>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Fault-tolerant computing system featuring synchronized parallel processing with automatic failover capabilities. 
+                        Implements triple modular redundancy (TMR) architecture and real-time consensus algorithms for mission-critical operations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Dual Redundancy</span>
+                        <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Fail-Safe Architecture</span>
+                        <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Hot Swap</span>
+                    </div>
+                    <div class="mt-4">
+                        <div class="h-2 bg-slate-700 rounded-full">
+                            <div class="h-2 bg-cyan-400 rounded-full w-1/12"></div>
+                        </div>
+                        <span class="text-sm text-cyan-400">Integration Phase - 5% Complete</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-400/40 transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-chart-line text-cyan-400 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold">Fennec Eye</h4>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Advanced flight monitoring system combining real-time telemetry analysis with machine learning-powered 
+                        predictive capabilities. Features comprehensive data visualization dashboards and anomaly detection 
+                        algorithms for optimal mission oversight.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Telemetry Analysis</span>
+                        <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Predictive Analytics</span>
+                        <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Real-time Monitoring</span>
+                    </div>
+                    <div class="mt-4">
+                        <div class="h-2 bg-slate-700 rounded-full">
+                            <div class="h-2 bg-cyan-400 rounded-full w-1/12"></div>
+                        </div>
+                        <span class="text-sm text-cyan-400">Development Phase - 10% Complete</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="border-l-4 border-cyan-400/40 ml-4 pl-8">
+                <div class="relative mb-8">
+                    <div class="absolute w-4 h-4 bg-cyan-400 rounded-full -left-[30px] top-4"></div>
+                    <h4 class="text-xl font-semibold mb-2">January 2025</h4>
+                    <p class="text-gray-300">Core team selection & role assignments</p>
+                </div>
+                <div class="relative mb-8">
+                    <div class="absolute w-4 h-4 bg-cyan-400 rounded-full -left-[30px] top-4"></div>
+                    <h4 class="text-xl font-semibold mb-2">February 2025</h4>
+                    <p class="text-gray-300">Project kickoff & initial design phase</p>
+                </div>
+                <div class="relative mb-8">
+                    <div class="absolute w-4 h-4 bg-cyan-400 rounded-full -left-[30px] top-4"></div>
+                    <h4 class="text-xl font-semibold mb-2">June 2025</h4>
+                    <p class="text-gray-300">Prototype completion & bench testing</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute w-4 h-4 bg-cyan-400 rounded-full -left-[30px] top-4"></div>
+                    <h4 class="text-xl font-semibold mb-2">November 2025</h4>
+                    <p class="text-gray-300">Final validation tests & competition presentation preparation</p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-12 text-center">
+                <a href="#contact" 
+                   class="inline-flex items-center bg-cyan-500 hover:bg-cyan-600 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105">
+                    <i class="fas fa-handshake-angle mr-3"></i>
+                    Become a Sponsor
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- Contact Section -->
+<section id="contact" class="py-20 bg-slate-800">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                    Get In Touch
+                </span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="bg-slate-700 p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-cyan-400 mr-4 text-xl"></i>
+                                <span>Institute of Aeronautics and Space Studies<br>University of Blida 1, Algeria</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope text-cyan-400 mr-4 text-xl"></i>
+                                <a href="mailto:contact@avionix.dz" class="hover:text-cyan-400">avionixteamblida@gmail.com</a>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone text-cyan-400 mr-4 text-xl"></i>
+                                <a href="tel:+213123456789" class="hover:text-cyan-400">+213 00 0000 0000</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-700 p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-4">Follow Our Journey</h3>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-2xl hover:text-cyan-400 transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="text-2xl hover:text-cyan-400 transition-colors">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="text-2xl hover:text-cyan-400 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-2xl hover:text-cyan-400 transition-colors">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-700 p-4 rounded-xl overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102628.02022502668!2d3.0490175308265016!3d36.47467440676755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fad679a48b7f1%3A0x9bd827f9b7d34560!2sBlida!5e0!3m2!1sen!2sdz!4v1717422829258!5m2!1sen!2sdz" 
+                            class="w-full h-64 rounded-lg border-0"
+                            allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Full Name</label>
+                        <input 
+                            type="text" 
+                            placeholder="John Doe" 
+                            required
+                            class="w-full p-3 bg-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 border border-slate-600">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email Address</label>
+                        <input 
+                            type="email" 
+                            placeholder="john@example.com" 
+                            required
+                            class="w-full p-3 bg-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 border border-slate-600">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Subject</label>
+                        <select class="w-full p-3 bg-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 border border-slate-600">
+                            <option value="">Select a subject</option>
+                            <option>Partnership Opportunities</option>
+                            <option>Technical Inquiry</option>
+                            <option>Media Request</option>
+                            <option>Recruitment</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message</label>
+                        <textarea 
+                            rows="5" 
+                            placeholder="Your message..." 
+                            required
+                            class="w-full p-3 bg-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 border border-slate-600"></textarea>
+                    </div>
+
+                    <button class="w-full bg-cyan-500 hover:bg-cyan-600 text-slate-900 py-3 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Send Message
+                    </button>
+
+                    <p class="text-center text-sm text-gray-400 mt-4">
+                        We typically respond within 24-48 hours
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-8 border-t border-slate-800">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-2xl hover:text-cyan-500 transition-colors">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-2xl hover:text-cyan-500 transition-colors">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="text-2xl hover:text-cyan-500 transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <p class="text-gray-400">&copy; 2025 AvioniX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-slate-900/95');
+            } else {
+                navbar.classList.remove('bg-slate-900/95');
+            }
+        });
+    </script>
+</body>
+</html>
